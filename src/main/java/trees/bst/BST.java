@@ -44,6 +44,88 @@ public class BST<T extends Comparable<T>> {
     }
 
     /**
+     * @param e
+     * @return true if the element is present in the BST else false.
+     */
+    public boolean search(T e) {
+        if (e == null) return false;
+        return search(root, e);
+    }
+
+    private boolean search(Node<T> node, T e) {
+        if (node == null) return false;
+        int cmp = e.compareTo(node.data);
+        if (cmp < 0)
+            return search(root.left, e);
+        else if (cmp > 0)
+            return search(root.right, e);
+        else
+            return true;
+    }
+
+    /**
+     * 
+     * @return minimum element in the BST.
+     */
+    public T min() {
+        return min(root);
+    }
+
+    private T min(Node<T> node) {
+        if (node == null) return null;
+        if (node.left == null)
+            return node.data;
+        else
+            return min(node.left);
+    }
+
+    /**
+     * 
+     * @return maximum element in the BST.
+     */
+    public T max() {
+        return max(root);
+    }
+
+    private T max(Node<T> node) {
+        if (node == null) return null;
+        if (node.right == null)
+            return node.data;
+        else
+            return max(node.right);
+    }
+
+    /**
+     * Delete the min element in the BST.
+     */
+    public void deleteMin() {
+        root = deleteMin(root);
+    }
+
+    private Node<T> deleteMin(Node<T> node) {
+        if (node == null) return null;
+        if (node.left == null) return node.right;
+        node.left = deleteMin(node.left);
+        node.size = Node.size(node.left) + Node.size(node.right) + 1;
+        return node;
+    }
+
+    /**
+     * Delete the max element in the BST.
+     */
+    public void deleteMax() {
+        root = deleteMax(root);
+    }
+
+    private Node<T> deleteMax(Node<T> node) {
+        if (node == null) return null;
+        if (node.right == null) return node.left;
+        node.right = deleteMax(node.right);
+        node.size = Node.size(node.left) + Node.size(node.right) + 1;
+        return node;
+    }
+
+    /**
      * 
      * @return size of the BST.
      */
