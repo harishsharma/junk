@@ -15,10 +15,6 @@ public class BST<T extends Comparable<T>> {
         this(new Node<>(data, null, null, 1));
     }
 
-    public BST() {
-        root = null;
-    }
-
     /**
      * Inserts the incoming element into the BST.
      * <p>
