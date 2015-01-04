@@ -68,13 +68,15 @@ public class BST<T extends Comparable<T>> {
      * @return minimum element in the BST.
      */
     public T min() {
-        return min(root);
+        Node<T> minNode = min(root);
+        if (minNode != null) return minNode.data;
+        return null;
     }
 
-    private T min(Node<T> node) {
+    private Node<T> min(Node<T> node) {
         if (node == null) return null;
         if (node.left == null)
-            return node.data;
+            return node;
         else
             return min(node.left);
     }
@@ -84,13 +86,15 @@ public class BST<T extends Comparable<T>> {
      * @return maximum element in the BST.
      */
     public T max() {
-        return max(root);
+        Node<T> maxNode = max(root);
+        if (maxNode != null) return maxNode.data;
+        return null;
     }
 
-    private T max(Node<T> node) {
+    private Node<T> max(Node<T> node) {
         if (node == null) return null;
         if (node.right == null)
-            return node.data;
+            return node;
         else
             return max(node.right);
     }
@@ -121,6 +125,30 @@ public class BST<T extends Comparable<T>> {
         if (node == null) return null;
         if (node.right == null) return node.left;
         node.right = deleteMax(node.right);
+        node.size = Node.size(node.left) + Node.size(node.right) + 1;
+        return node;
+    }
+
+    public void delete(T e) {
+        root = delete(root, e);
+    }
+
+    private Node<T> delete(Node<T> node, T e) {
+        if (node == null) return null;
+        int comp = e.compareTo(node.data);
+        if (comp < 0)
+            node.left = delete(node.left, e);
+        else if (comp > 0)
+            node.right = delete(node.right, e);
+        else {
+            if (node.left == null)
+                return node.right;
+            else if (node.right == null) return node.left;
+            Node<T> temp = node;
+            node = min(temp.right);
+            node.right = deleteMin(temp.right);
+            node.left = temp.left;
+        }
         node.size = Node.size(node.left) + Node.size(node.right) + 1;
         return node;
     }
