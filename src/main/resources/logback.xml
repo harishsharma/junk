@@ -1,0 +1,24 @@
+<configuration>
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+
+	<!-- Set some of the 3rd party libraries to log only at INFO or higher levels -->
+	<logger name="org.springframework" level="ERROR" />
+	<logger name="com.netflix" level="ERROR" />
+
+	<!--Set of direct deps log levels -->
+	<logger name="io.netty" level="INFO" />
+	<logger name="io.netty.handler" level="INFO" />
+	<logger name="org.apache.zookeeper" level="WARN" />
+	<logger name="netty" level="DEBUG" />
+
+	<root level="INFO">
+		<appender-ref ref="STDOUT" />
+	</root>
+
+</configuration>
