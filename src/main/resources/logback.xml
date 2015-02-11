@@ -16,8 +16,9 @@
 	<logger name="io.netty.handler" level="INFO" />
 	<logger name="org.apache.zookeeper" level="WARN" />
 	<logger name="netty" level="DEBUG" />
+	<logger name="nio" level="DEBUG" />
 
-	<root level="INFO">
+	<root level="DEBUG">
 		<appender-ref ref="STDOUT" />
 	</root>
 

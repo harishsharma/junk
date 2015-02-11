@@ -33,7 +33,7 @@ public class ClientHandler extends ChannelOutboundHandlerAdapter {
             ChannelPromise promise) throws Exception {
         log.debug("Connect called for [{}]", ctx.channel());
         // kick start the server.
-        ctx.writeAndFlush(message);
+        ctx.channel().writeAndFlush(message);
         log.debug("Done writing in connect.");
     }
 

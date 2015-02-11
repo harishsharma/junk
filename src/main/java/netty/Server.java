@@ -31,7 +31,11 @@ public class Server {
                         @Override
                         public void initChannel(SocketChannel ch) throws Exception {
                             ChannelPipeline p = ch.pipeline();
-                            p.addLast(new ServerHandler());
+                            p.addLast(new OutboundHandler3());
+                            p.addLast(new OutboundHandler2());
+                            p.addLast(new InboundHandler1());
+                            p.addLast(new OutboundHandler1());
+                            p.addLast(new InboundHandler2());
                         }
                     });
 

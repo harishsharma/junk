@@ -15,8 +15,8 @@ public class JavaClient {
         Socket socket = new Socket(HOST, PORT);
         OutputStream io = socket.getOutputStream();
         for (int i = 0; i < iterations; i++) {
-            io.write(message);
             Thread.sleep(15);
+            io.write(message);
         }
         io.close();
         socket.close();
@@ -24,7 +24,7 @@ public class JavaClient {
 
     public static void main(String... args) throws UnknownHostException, IOException {
         JavaClient client = new JavaClient();
-        int ITR = 2;
+        int ITR = 10;
         new Thread(() -> {
             try {
                 client.createAndStartClient((byte) 'A', ITR);
