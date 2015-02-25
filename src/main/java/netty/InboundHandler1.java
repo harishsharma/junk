@@ -26,8 +26,8 @@ public class InboundHandler1 extends ChannelInboundHandlerAdapter {
             byte[] b = new byte[buf.readableBytes()];
             buf.getBytes(0, b);
             log.info("Data read is [{}]", new String(b));
-            ctx.channel().write(Unpooled.copiedBuffer(buf));
-            ctx.fireChannelRead(Unpooled.copiedBuffer(buf));
+            ctx.write(Unpooled.copiedBuffer(buf));
+            // ctx.fireChannelRead(Unpooled.copiedBuffer(buf));
         } finally {
             ReferenceCountUtil.release(buf);
         }
