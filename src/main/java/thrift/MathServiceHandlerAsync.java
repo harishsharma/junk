@@ -27,6 +27,7 @@ public class MathServiceHandlerAsync implements MathService.AsyncIface {
     @SuppressWarnings("unchecked")
     @Override
     public void sum(int a, int b, AsyncMethodCallback resultHandler) throws TException {
+        log.info("Server side sum request recieved");
         int result = a + b;
         resultHandler.onComplete(result);
     }

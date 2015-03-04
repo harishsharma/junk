@@ -15,7 +15,6 @@ public class JavaClient {
         Socket socket = new Socket(HOST, PORT);
         OutputStream io = socket.getOutputStream();
         for (int i = 0; i < iterations; i++) {
-            Thread.sleep(15);
             io.write(message);
         }
         io.close();
@@ -25,16 +24,31 @@ public class JavaClient {
     public static void main(String... args) throws UnknownHostException, IOException {
         JavaClient client = new JavaClient();
         int ITR = 10;
-        new Thread(() -> {
-            try {
-                client.createAndStartClient((byte) 'A', ITR);
-            } catch (Exception e) {}
-        }).start();
-        // new Thread(() -> {
-        // try {
-        // client.createAndStartClient((byte) 'B', ITR);
-        // } catch (Exception e) {}
-        // }).start();
+        char[] charArray = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o'};
+        for (int i = 0; i < charArray.length; i++) {
+            Task t = new Task(client, ITR, charArray[i]);
+            new Thread(t).start();
+        }
+    }
 
+    private static class Task implements Runnable {
+        private final JavaClient client;
+        private final int        ITR;
+        private final char       ch;
+
+        public Task(final JavaClient client, final int ITR, final char ch) {
+            this.ch = ch;
+            this.client = client;
+            this.ITR = ITR;
+        }
+
+        @Override
+        public void run() {
+            try {
+                client.createAndStartClient((byte) ch, ITR);
+            } catch (Exception e) {
+
+            }
+        }
     }
 }

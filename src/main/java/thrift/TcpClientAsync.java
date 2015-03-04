@@ -48,6 +48,6 @@ public class TcpClientAsync {
     public static void main(String[] args) throws IOException, TException, InterruptedException {
         TcpClientAsync client = new TcpClientAsync("localhost", 4000);
         client.sum(2, 4);
-        Thread.sleep(10 * 1000);
+        Thread.sleep(1 * 1000);
     }
 }

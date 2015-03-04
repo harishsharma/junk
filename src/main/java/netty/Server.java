@@ -1,5 +1,8 @@
 package netty;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
@@ -12,7 +15,7 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 
 /**
  * Purpose of this server client code is to see what actually happens in netty when two or more sockets are opened and
- * requests are made parallely with two clients. Note worker pool has only one thread.
+ * requests are made in parallel with two clients. Note worker pool has only one thread.
  * 
  * @author harish.sharma
  *
@@ -22,8 +25,9 @@ public class Server {
     static final int PORT = 4000;
 
     public static void main(String[] args) throws Exception {
+        ExecutorService executor = Executors.newFixedThreadPool(2);
         EventLoopGroup bossGroup = new NioEventLoopGroup(1);
-        EventLoopGroup workerGroup = new NioEventLoopGroup(1);
+        EventLoopGroup workerGroup = new NioEventLoopGroup(2, executor);
         try {
             ServerBootstrap b = new ServerBootstrap();
             b.group(bossGroup, workerGroup).channel(NioServerSocketChannel.class).option(ChannelOption.SO_BACKLOG, 100)
@@ -31,11 +35,8 @@ public class Server {
                         @Override
                         public void initChannel(SocketChannel ch) throws Exception {
                             ChannelPipeline p = ch.pipeline();
-                            p.addLast(new OutboundHandler3());
-                            p.addLast(new OutboundHandler2());
+
                             p.addLast(new InboundHandler1());
-                            p.addLast(new OutboundHandler1());
-                            p.addLast(new InboundHandler2());
                         }
                     });
 
