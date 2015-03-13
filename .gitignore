@@ -1,0 +1,12 @@
+.pmd
+.pmdruleset.xml
+.checkstyle
+.project
+.settings/
+.classpath
+target/
+bin/
+test-output/
+dependency-reduced-pom.xml
+*.iml
+.idea
