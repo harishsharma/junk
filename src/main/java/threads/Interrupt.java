@@ -1,5 +1,7 @@
 package threads;
 
+import java.math.BigInteger;
+
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -15,13 +17,16 @@ public class Interrupt {
         Thread t1 = new Thread(() -> {
             try {
                 log.debug("Started working in {}", Thread.currentThread().getName());
-                Thread.sleep(20 * 1000);
+                BigInteger p = new BigInteger("31");
+                while (!Thread.currentThread().isInterrupted()) {
+                    log.debug("Next prime is {}", p = p.nextProbablePrime());
+                }
             } catch (Exception e) {
                 log.error("Exception {}", e);
             }
         });
         t1.start();
-        Thread.sleep(3 * 1000);
+        Thread.sleep(5 * 1000);
         t1.interrupt();
     }
 }
