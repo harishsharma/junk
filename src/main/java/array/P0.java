@@ -1,5 +1,6 @@
 package array;
 
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 
@@ -9,19 +10,17 @@ import lombok.extern.slf4j.Slf4j;
  * 
  * Assume the erroneous inputs are not given.
  * 
+ * Time : O(n) Space: O(1)
+ * 
  * @author harish.sharma
  *
  */
 @Slf4j
+@RequiredArgsConstructor
 public class P0 {
 
-    private final int   k;
     private final int[] array;
-
-    public P0(final int[] array, final int k) {
-        this.k = k;
-        this.array = array;
-    }
+    private final int   k;
 
     public int[] solve() {
         int len = array.length;

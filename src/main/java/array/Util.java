@@ -21,4 +21,20 @@ public class Util {
         array[indexB] = t;
     }
 
+
+    /*
+     * Return if the array segment between start and end is palindrom.
+     */
+    public static boolean isPalindrom(final char[] array, int start, int end) {
+        int mid = start + (end - start) / 2;
+        boolean isPalindrom = true;
+        for (int i = 0; start + i <= mid; i++) {
+            if (array[start + i] != array[end - i]) {
+                isPalindrom = false;
+                break;
+            }
+        }
+        return isPalindrom;
+    }
+
 }
