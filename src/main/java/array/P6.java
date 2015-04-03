@@ -20,7 +20,8 @@ import com.google.common.collect.Maps;
 public class P6 {
 
     /*
-     * return null if there is no pair.
+     * 
+     * return indexes of elements or null if there is no pair.
      */
     public Pair<Integer, Integer> solve(final int[] array, int target) {
         Map<Integer, Integer> map = Maps.newHashMap();
