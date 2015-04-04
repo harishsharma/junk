@@ -1,5 +1,10 @@
 package array;
 
+/**
+ * 
+ * @author harish.sharma
+ *
+ */
 public class BinarySearch {
 
     public static boolean search(final int[] a, final int item) {
