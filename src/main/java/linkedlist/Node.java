@@ -1,10 +1,13 @@
 package linkedlist;
 
+import lombok.ToString;
+
 /**
  * 
  * @author harish.sharma
  *
  */
+@ToString
 public class Node {
     /*
      * Data is package private so that the code does not look verbose ,  otherwise it should be private field with getter/setters.
