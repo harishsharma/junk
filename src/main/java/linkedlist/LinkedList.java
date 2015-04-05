@@ -103,6 +103,21 @@ public class LinkedList {
         return slow;
     }
 
+    public void append(LinkedList a) {
+        tail.next = a.getHead();
+        tail = a.getTail();
+    }
+
+    public int len() {
+        int count = 0;
+        Node h = head;
+        while (h != null) {
+            h = h.next;
+            count++;
+        }
+        return count;
+    }
+
     public static LinkedList merge(LinkedList a, LinkedList b) {
 
         Node aHead = a.head;
@@ -144,10 +159,13 @@ public class LinkedList {
         a.addNodeBegin(4);
         a.addNodeBegin(2);
         a.print();
-        a.addNodeLast(5);
-        a.addNodeLast(6);
-        a.addNodeLast(7);
+        LinkedList b = new LinkedList(new Node(11));
+        b.addNodeBegin(42);
+        b.addNodeBegin(23);
+        b.print();
+        a.append(b);
         a.print();
+        System.out.println(a.len());
     }
 
 }
