@@ -1,6 +1,7 @@
 package trees.bst;
 
 import lombok.AllArgsConstructor;
+import lombok.ToString;
 
 
 /**
@@ -11,6 +12,7 @@ import lombok.AllArgsConstructor;
  * @param <T> data element in the tree. T should be comparable so that BST can use it to make decision about the
  *        branching.
  */
+@ToString
 @AllArgsConstructor
 public class Node<T extends Comparable<T>> {
     T       data;

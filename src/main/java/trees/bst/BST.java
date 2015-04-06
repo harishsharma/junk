@@ -7,7 +7,7 @@ public class BST<T extends Comparable<T>> {
     private Node<T> root;
 
     BST(Node<T> root) {
-        Preconditions.checkArgument(root.data != null, "data cannot be null");
+        Preconditions.checkArgument(root != null && root.data != null, "root or data cannot be null");
         this.root = root;
     }
 
@@ -182,5 +182,57 @@ public class BST<T extends Comparable<T>> {
         str += r.data;
         str += " (" + subtreeToString(r.left) + ") (" + subtreeToString(r.right) + ")";
         return str;
+    }
+
+    public void printPreOrderTree() {
+        printPreOrderTree(root);
+        System.out.println();
+    }
+
+    private void printPreOrderTree(Node<T> root) {
+        if (root == null) return;
+
+        System.out.print(" " + root.data + " ");
+        printPreOrderTree(root.left);
+        printPreOrderTree(root.right);
+    }
+
+    public void printPostOrderTree() {
+        printPostOrderTree(root);
+        System.out.println();
+    }
+
+    private void printPostOrderTree(Node<T> root) {
+        if (root == null) return;
+
+        printPostOrderTree(root.left);
+        printPostOrderTree(root.right);
+        System.out.print(" " + root.data + " ");
+    }
+
+    public void printInOrderTree() {
+        printInOrderTree(root);
+        System.out.println();
+    }
+
+    private void printInOrderTree(Node<T> root) {
+        if (root == null) return;
+
+        printInOrderTree(root.left);
+        System.out.print(" " + root.data + " ");
+        printInOrderTree(root.right);
+    }
+
+    public static void main(String[] args) {
+        BST<Integer> bst = new BST<>(10);
+        bst.insert(5);
+        bst.insert(3);
+        bst.insert(7);
+        bst.insert(12);
+        bst.insert(11);
+        bst.insert(13);
+        bst.printPreOrderTree();
+        bst.printPostOrderTree();
+        bst.printInOrderTree();
     }
 }
