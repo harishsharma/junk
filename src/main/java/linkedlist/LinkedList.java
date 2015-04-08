@@ -145,11 +145,11 @@ public class LinkedList {
         Node fast = head;
         Node slow = head;
         while (fast != null && fast.next != null && fast.next.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
             if (slow == fast) {
                 return true;
             }
-            slow = slow.next;
-            fast = fast.next.next;
         }
         return false;
     }
@@ -166,6 +166,7 @@ public class LinkedList {
         a.append(b);
         a.print();
         System.out.println(a.len());
+        System.out.println(b.hasCycle());
     }
 
 }
