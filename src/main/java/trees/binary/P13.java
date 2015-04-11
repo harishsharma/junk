@@ -9,4 +9,20 @@ package trees.binary;
  */
 public class P13 {
 
+    public boolean solve(Node root, int k) {
+        if (root == null) return false;
+        if (root.left == null && root.right == null && k == root.data) return true;
+        return solve(root.left, k - root.data) || solve(root.right, k - root.data);
+    }
+
+    public static void main(String[] args) {
+        Node root1 = new Node(10);
+        root1.left = new Node(8);
+        root1.left.left = new Node(3);
+        root1.left.right = new Node(5);
+        root1.right = new Node(2);
+        root1.right.left = new Node(3);
+        root1.right.right = new Node(1);
+        System.out.println(new P13().solve(root1, 23));
+    }
 }
