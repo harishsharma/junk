@@ -2,6 +2,12 @@ package trees.bst;
 
 import com.google.common.base.Preconditions;
 
+/**
+ * 
+ * @author harish.sharma
+ *
+ * @param <T>
+ */
 public class BST<T extends Comparable<T>> {
 
     private Node<T> root;
