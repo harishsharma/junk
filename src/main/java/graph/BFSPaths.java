@@ -1,5 +1,7 @@
 package graph;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 /**
@@ -7,25 +9,31 @@ import java.util.Stack;
  * @author harish.sharma
  *
  */
-public class DFSPaths implements Paths {
+public class BFSPaths implements Paths {
 
-    private boolean[] marked;
     private int[]     edgeTo;
+    private boolean[] marked;
     private int       s;
 
-    public DFSPaths(Graph g, int s) {
-        marked = new boolean[g.V()];
+    public BFSPaths(Graph g, int s) {
         edgeTo = new int[g.V()];
+        marked = new boolean[g.V()];
         this.s = s;
         preProcess(g, s);
     }
 
     private void preProcess(Graph g, int v) {
+        Queue<Integer> q = new LinkedList<>();
+        q.add(v);
         marked[v] = true;
-        for (int a : g.adj(v)) {
-            if (!marked[a]) {
-                edgeTo[a] = v;
-                preProcess(g, a);
+        while (!q.isEmpty()) {
+            Integer a = q.remove();
+            for (Integer x : g.adj(a)) {
+                if (!marked[x]) {
+                    edgeTo[x] = a;
+                    marked[x] = true;
+                    q.add(x);
+                }
             }
         }
     }
@@ -40,13 +48,14 @@ public class DFSPaths implements Paths {
         if (!hasPathTo(v)) return null;
         Stack<Integer> stack = new Stack<>();
         for (int i = v; i != s; i = edgeTo[i]) {
-            stack.push(i);
+            stack.add(i);
         }
-        stack.push(s);
+        stack.add(s);
         return stack;
     }
 
     public static void main(String[] args) {
+
         Graph g = new Graph(5);
         g.addEdge(0, 1);
         g.addEdge(0, 2);
@@ -55,7 +64,7 @@ public class DFSPaths implements Paths {
         g.addEdge(2, 3);
         g.addEdge(3, 4);
 
-        DFSPaths paths = new DFSPaths(g, 0);
+        BFSPaths paths = new BFSPaths(g, 0);
         System.out.println(paths.hasPathTo(0));
         System.out.println(paths.hasPathTo(1));
         System.out.println(paths.hasPathTo(2));
@@ -67,6 +76,6 @@ public class DFSPaths implements Paths {
         System.out.println(paths.pathTo(2));
         System.out.println(paths.pathTo(3));
         System.out.println(paths.pathTo(4));
-    }
 
+    }
 }

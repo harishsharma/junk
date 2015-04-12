@@ -5,7 +5,7 @@ package graph;
  * @author harish.sharma
  *
  */
-public class DFS {
+public class DFS implements GraphSearch {
 
     private boolean[] marked;
     private int       count;
@@ -23,10 +23,12 @@ public class DFS {
         }
     }
 
+    @Override
     public boolean isConnected(int v) {
         return marked[v];
     }
 
+    @Override
     public int count() {
         return count;
     }
