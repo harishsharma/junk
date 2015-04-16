@@ -10,6 +10,11 @@ import com.google.common.io.Resources;
 import org.mvel2.templates.TemplateRuntime;
 import org.weakref.jmx.com.google.common.collect.Maps;
 
+/**
+ * 
+ * @author harish.sharma
+ *
+ */
 public class SimpleMvel {
 
     private final Map<String, String> contextMap;
