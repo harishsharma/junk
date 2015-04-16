@@ -13,5 +13,9 @@ public class Test {
         Integer i4 = 127;
 
         System.out.println(i3 == i4);
+
+        if (null instanceof Object) {
+            System.out.println("haha");
+        }
     }
 }
