@@ -1,8 +1,13 @@
 package mvel;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.List;
 import java.util.Map;
 
+import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import com.google.common.io.Resources;
 
 import org.mvel2.templates.TemplateRuntime;
 
@@ -24,21 +29,14 @@ public class HAProxyMvel {
         return (String) TemplateRuntime.eval(evalString, ctx);
     }
 
-    public static void main(String[] args) {
-        String evalString = "My name is : ${name}";
+    public static void main(String[] args) throws IOException {
+        InputStream in = Resources.getResource("mvel/haproxy.cfg.template").openStream();
         Map<String, Object> map = Maps.newHashMap();
-        map.put("name", "harish");
-        map.put("active", false);
-        map.put("status", false);
-        map.put("some", new Some("hello"));
-        System.out.println(new HAProxyMvel(map).eval(evalString));
-        String str = "@if{active} Your account is currently active! @elseif{status} Your account has been suspended, please contact customer support @else{} Your account is not active @end{}";
-        System.out.println(new HAProxyMvel(map).eval(str));
-        String str1 = "@{some.name}";
-        System.out.println(new HAProxyMvel(map).eval(str1));
-    }
-
-    static enum Account1 {
-        SUSPENDED, NOT;
+        List<Server> servers = Lists.newArrayList();
+        servers.add(new Server("server1", "localhost", 4000));
+        servers.add(new Server("server2", "fabric-02.planet.ev1.inmobi.com", 4000));
+        map.put("servers", servers);
+        String result = (String) TemplateRuntime.eval(in, map);
+        System.out.println(result);
     }
 }
