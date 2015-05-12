@@ -20,6 +20,13 @@ public class Node<T extends Comparable<T>> {
     Node<T> right;
     int     size;
 
+    public Node(T data) {
+        this.data = data;
+        this.left = null;
+        this.right = null;
+        size = 0;
+    }
+
     /**
      * Size of the subtree(including this node).
      * 

@@ -106,6 +106,26 @@
 			<version>2.2.4.Final</version>
 		</dependency>
 
+		<!-- Handlebar -->
+		<dependency>
+			<groupId>com.github.jknack</groupId>
+			<artifactId>handlebars</artifactId>
+			<version>2.1.0</version>
+		</dependency>
+
+		<!-- Mustache -->
+		<dependency>
+			<groupId>com.github.spullara.mustache.java</groupId>
+			<artifactId>compiler</artifactId>
+			<version>0.8.17</version>
+		</dependency>
+
+		<!-- apache commons io -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.4</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
