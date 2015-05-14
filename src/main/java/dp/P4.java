@@ -30,5 +30,6 @@ public class P4 {
     public static void main(String[] args) {
         System.out.println(solve("abcdgh", "aedfhr"));
         System.out.println(solve("AGGTAB", "GXTXAYB"));
+        System.out.println(solve("BBABCBCAB", "BACBCBABB"));
     }
 }
