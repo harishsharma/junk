@@ -14,4 +14,35 @@ package dp;
  */
 public class P11 {
 
+    public static int solve(int[] price, int n) {
+        if (n == 0) return 0;
+        if (n == 1) return price[n - 1];
+        int res = Integer.MIN_VALUE;
+        for (int i = 0; i < n; i++) {
+            res = Math.max(price[i] + solve(price, n - i - 1), res);
+        }
+        return res;
+    }
+
+    public static int solve1(int[] price) {
+
+        int len = price.length;
+        int[] P = new int[len + 1];
+
+        for (int i = 1; i <= len; i++) {
+            int res = Integer.MIN_VALUE;
+            for (int j = 0; j < i; j++) {
+                res = Math.max(res, price[j] + P[i - j - 1]);
+            }
+            P[i] = res;
+        }
+        return P[len];
+    }
+
+    public static void main(String[] args) {
+        int arr[] = { 1, 5, 8, 9, 10, 17, 17, 20};
+        System.out.println(solve(arr, arr.length));
+
+        System.out.println(solve1(arr));
+    }
 }

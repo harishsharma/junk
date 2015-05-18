@@ -21,20 +21,20 @@ public class P7 {
         return solve(s, m, n - s[m - 1]) + solve(s, m - 1, n);
     }
 
-    public static int solve1(int[] s, int m, int n) {
+    public static int solve1(int[] s, int coins, int amount) {
 
-        int[][] S = new int[n + 1][m];
-        for (int i = 0; i < m; i++) {
+        int[][] S = new int[amount + 1][coins];
+        for (int i = 0; i < coins; i++) {
             S[0][i] = 1;
         }
-        for (int i = 1; i < n + 1; i++) {
-            for (int j = 0; j < m; j++) {
+        for (int i = 1; i < amount + 1; i++) {
+            for (int j = 0; j < coins; j++) {
                 int x = (j >= 1) ? S[i][j - 1] : 0;
                 int y = (i - s[j]) >= 0 ? S[i - s[j]][j] : 0;
                 S[i][j] = x + y;
             }
         }
-        return S[n][m - 1];
+        return S[amount][coins - 1];
     }
 
     public static void main(String[] args) {

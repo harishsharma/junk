@@ -13,7 +13,7 @@ public class PrintMatrixSpiral {
     }
 
     private static void printSpiral(int[][] matrix, int depth) {
-        if (matrix == null && matrix.length == 0) return;
+        if (matrix == null || matrix.length == 0) return;
         int rows = matrix.length;
         int cols = matrix[0].length;
         if (2 * depth > Math.min(rows, cols)) return;
