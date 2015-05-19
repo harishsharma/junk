@@ -11,7 +11,7 @@ package dp;
  * @author harish.sharma
  *
  */
-public class P6 {
+public class MatrixMinPath {
     public static int solve(int[][] cost, int m, int n) {
         int row = cost.length;
         int col = cost[0].length;

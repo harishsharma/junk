@@ -6,7 +6,7 @@ package dp;
  * @author harish.sharma
  *
  */
-public class P16 {
+public class MatrixMaxOnes {
 
     public static int solve(int[][] mat) {
         int rows = mat.length;

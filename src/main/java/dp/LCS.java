@@ -7,7 +7,7 @@ package dp;
  * @author harish.sharma
  *
  */
-public class P4 {
+public class LCS {
 
     public static int solve(String a, String b) {
         char[] aChars = a.toCharArray();

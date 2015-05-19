@@ -7,7 +7,7 @@ package dp;
  * @author harish.sharma
  *
  */
-public class P5 {
+public class DistanceBetweenStrings {
     public static int solve(String a, String b) {
         char[] ac = a.toCharArray();
         int alen = ac.length;

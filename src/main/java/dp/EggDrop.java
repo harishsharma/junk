@@ -24,7 +24,7 @@ package dp;
  * @author harish.sharma
  *
  */
-public class P9 {
+public class EggDrop {
     public static int solve(int floors, int eggs) {
         if (floors == 0 || floors == 1) return floors;
         if (eggs == 1) return floors;

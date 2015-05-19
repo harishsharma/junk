@@ -12,7 +12,7 @@ package dp;
  * @author harish.sharma
  *
  */
-public class P7 {
+public class CoinChange {
     public static int solve(int[] s, int m, int n) {
 
         if (n == 0) return 1;

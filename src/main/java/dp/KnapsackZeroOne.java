@@ -10,7 +10,7 @@ package dp;
  * @author harish.sharma
  *
  */
-public class P8 {
+public class KnapsackZeroOne {
     public static int solve(int[] val, int[] wt, int n, int w) {
         if (n == 0 || w == 0) return 0;
         if (w < wt[n - 1]) {

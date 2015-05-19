@@ -9,7 +9,7 @@ package dp;
  * @author harish.sharma
  *
  */
-public class P3 {
+public class LIS {
 
     public static int solve(int[] a) {
         int len = a.length;
