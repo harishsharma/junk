@@ -39,7 +39,6 @@ public class P12 {
         int t = sc.nextInt();
         while (t > 0) {
             t--;
-            int n = sc.nextInt();
             int[] a = sc.nextIntArray();
             int[] reversed = new int[a.length];
             int i = 0;

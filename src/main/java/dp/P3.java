@@ -1,6 +1,5 @@
 package dp;
 
-import java.util.Scanner;
 
 /**
  * The longest Increasing Subsequence (LIS) problem is to find the length of the longest subsequence of a given sequence
