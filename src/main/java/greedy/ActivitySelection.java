@@ -15,7 +15,7 @@ import lombok.ToString;
  * @author harish.sharma
  *
  */
-public class P1 {
+public class ActivitySelection {
     public static List<Activity> solve(int[] start, int[] finish) {
         int len = start.length;
         List<Activity> activities = Lists.newArrayList();

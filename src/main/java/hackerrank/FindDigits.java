@@ -8,7 +8,7 @@ import java.util.Scanner;
  * @author harish.sharma
  *
  */
-public class P4 {
+public class FindDigits {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int t = in.nextInt();

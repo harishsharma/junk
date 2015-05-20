@@ -16,7 +16,7 @@ import lombok.ToString;
  * @author harish.sharma
  *
  */
-public class P2 {
+public class WeightedActivitySelection {
 
     public static List<Job> solve(int[] deadLine, int[] profit) {
 

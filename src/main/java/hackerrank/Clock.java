@@ -12,7 +12,7 @@ import java.util.Scanner;
  * @author harish.sharma
  *
  */
-public class P5 {
+public class Clock {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int h = in.nextInt();

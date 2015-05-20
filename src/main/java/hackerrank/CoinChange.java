@@ -8,7 +8,7 @@ import java.util.Scanner;
  * @author harish.sharma
  *
  */
-public class P9 {
+public class CoinChange {
     public static int coinChange(int[] c, int coins, int amount) {
         if (amount == 0) return 1;
         if (amount < 0) return 0;

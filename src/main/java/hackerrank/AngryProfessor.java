@@ -8,7 +8,7 @@ import java.util.Scanner;
  * @author harish.sharma
  *
  */
-public class P3 {
+public class AngryProfessor {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int t = in.nextInt();

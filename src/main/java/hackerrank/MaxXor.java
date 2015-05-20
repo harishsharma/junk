@@ -8,7 +8,7 @@ import java.util.Scanner;
  * @author harish.sharma
  *
  */
-public class P1 {
+public class MaxXor {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);

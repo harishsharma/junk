@@ -10,7 +10,7 @@ import java.util.Scanner;
  * @author harish.sharma
  *
  */
-public class P13 {
+public class LCS {
     public static List<Integer> solve(int[] a, int[] b) {
         int alen = a.length;
         int blen = b.length;

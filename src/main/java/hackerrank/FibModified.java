@@ -9,7 +9,7 @@ import java.util.Scanner;
  * @author harish.sharma
  *
  */
-public class P11 {
+public class FibModified {
 
     public static BigInteger fibM(Integer first, Integer second, int n) {
         BigInteger[] res = new BigInteger[n + 1];

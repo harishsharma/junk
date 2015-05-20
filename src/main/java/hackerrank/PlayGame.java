@@ -12,7 +12,7 @@ import java.util.StringTokenizer;
  * @author harish.sharma
  *
  */
-public class P12 {
+public class PlayGame {
     public static long solve(int[] a) {
         long[] prefixSum = new long[a.length];
         prefixSum[0] = a[0];

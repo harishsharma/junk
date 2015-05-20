@@ -10,7 +10,7 @@ import java.util.TreeMap;
  * @author harish.sharma
  *
  */
-public class P2 {
+public class CutSticks {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);

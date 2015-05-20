@@ -8,7 +8,7 @@ import java.util.Scanner;
  * @author harish.sharma
  *
  */
-public class P7 {
+public class SumMaxSubArray {
 
     public static long contiguous(int[] a) {
         int len = a.length;

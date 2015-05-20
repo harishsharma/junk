@@ -3,12 +3,12 @@ package hackerrank;
 import java.util.Scanner;
 
 /**
- * https://www.hackerrank.com/challenges/longest-increasing-subsequent
+ * https://www.hackerrank.com/challenges/longest-increasing-subsequence
  * 
  * @author harish.sharma
  *
  */
-public class P10 {
+public class LIS {
 
     public static int lis(int[] a) {
         int len = a.length;
