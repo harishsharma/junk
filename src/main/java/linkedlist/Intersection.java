@@ -14,7 +14,7 @@ package linkedlist;
  * @author harish.sharma
  *
  */
-public class P8 {
+public class Intersection {
     public Node solve(LinkedList a, LinkedList b) {
         int aLen = a.len();
         int bLen = b.len();
@@ -54,6 +54,6 @@ public class P8 {
         b.addNodeLast(aa);
         b.addNodeLast(bb);
         b.print();
-        System.out.println(new P8().solve(a, b));
+        System.out.println(new Intersection().solve(a, b));
     }
 }

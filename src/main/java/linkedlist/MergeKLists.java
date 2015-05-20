@@ -9,7 +9,7 @@ import java.util.PriorityQueue;
  * @author harish.sharma
  *
  */
-public class P5 {
+public class MergeKLists {
 
     public LinkedList solve(LinkedList... linkedLists) {
         LinkedList[] input = linkedLists;
@@ -49,6 +49,6 @@ public class P5 {
         c.addNodeLast(-2);
         c.addNodeLast(2);
         c.addNodeLast(423);
-        new P5().solve(a, b, c).print();
+        new MergeKLists().solve(a, b, c).print();
     }
 }

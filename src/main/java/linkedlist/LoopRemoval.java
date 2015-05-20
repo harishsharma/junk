@@ -7,7 +7,7 @@ package linkedlist;
  * @author harish.sharma
  *
  */
-public class P9 {
+public class LoopRemoval {
 
     public boolean solve(Node a) {
         if (a == null) return false;
@@ -48,6 +48,6 @@ public class P9 {
         a.next.next.next.next.next = new Node(6);
         a.next.next.next.next.next.next = a.next.next;
 
-        System.out.println(new P9().solve(a));
+        System.out.println(new LoopRemoval().solve(a));
     }
 }

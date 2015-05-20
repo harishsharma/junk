@@ -10,7 +10,7 @@ package linkedlist;
  * @author harish.sharma
  *
  */
-public class P6 {
+public class DeleteDuplicates {
     public LinkedList solve(LinkedList a) {
         if (a == null || a.getHead() == null || a.getHead().next == null) return a;
         Node aHead = a.getHead();
@@ -41,6 +41,6 @@ public class P6 {
         a.addNodeLast(55);
         a.addNodeLast(53);
         a.addNodeLast(56);
-        new P6().solve(a).print();
+        new DeleteDuplicates().solve(a).print();
     }
 }

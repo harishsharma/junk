@@ -11,7 +11,7 @@ package linkedlist;
  * @author harish.sharma
  *
  */
-public class P7 {
+public class PartitionByElement {
     public LinkedList solve(LinkedList a, int k) {
         LinkedList small = new LinkedList();
         LinkedList big = new LinkedList();
@@ -36,6 +36,6 @@ public class P7 {
         a.addNodeLast(2);
         a.addNodeLast(5);
         a.print();
-        new P7().solve(a, 3).print();
+        new PartitionByElement().solve(a, 3).print();
     }
 }

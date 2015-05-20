@@ -6,7 +6,7 @@ package linkedlist;
  * @author harish.sharma
  *
  */
-public class P2 {
+public class Reorder {
     public LinkedList solve(LinkedList a) {
         Node middle = a.middle();
         Node tmp = middle.next;
@@ -24,6 +24,6 @@ public class P2 {
         b.addNodeBegin(9);
         b.addNodeBegin(91);
         b.print();
-        new P2().solve(b).print();
+        new Reorder().solve(b).print();
     }
 }

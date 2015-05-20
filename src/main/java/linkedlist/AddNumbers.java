@@ -10,7 +10,7 @@ package linkedlist;
  * @author harish.sharma
  *
  */
-public class P1 {
+public class AddNumbers {
 
     public LinkedList solve(LinkedList a, LinkedList b) {
         a.reverse();
@@ -59,6 +59,6 @@ public class P1 {
         b.addNodeBegin(5);
         b.addNodeBegin(9);
         b.print();
-        new P1().solve(a, b).print();
+        new AddNumbers().solve(a, b).print();
     }
 }

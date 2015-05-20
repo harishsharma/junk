@@ -7,7 +7,7 @@ package linkedlist;
  * @author harish.sharma
  *
  */
-public class P4 {
+public class Merge {
     public LinkedList solve(LinkedList a, LinkedList b) {
         LinkedList result = new LinkedList();
         Node aHead = a.getHead();
@@ -43,6 +43,6 @@ public class P4 {
         b.addNodeLast(0);
         b.addNodeLast(4);
         b.addNodeLast(6);
-        new P4().solve(a, b).print();
+        new Merge().solve(a, b).print();
     }
 }

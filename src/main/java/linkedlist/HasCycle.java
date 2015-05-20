@@ -6,7 +6,7 @@ package linkedlist;
  * @author harish.sharma
  *
  */
-public class P3 {
+public class HasCycle {
     public boolean solve(LinkedList a) {
         return a.hasCycle();
     }
