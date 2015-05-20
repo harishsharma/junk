@@ -9,7 +9,7 @@ import java.util.List;
  * @author harish.sharma
  *
  */
-public class P1 {
+public class Permutations {
     public static List<String> solve(String s) {
         if (s == null || s.length() == 0) return new ArrayList<String>();
 

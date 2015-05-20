@@ -11,7 +11,7 @@ import lombok.extern.slf4j.Slf4j;
  *
  */
 @Slf4j
-public class P1 {
+public class ClosestKElements {
     public int[] solve(int[] a, int k, int x) {
         int counter = k;
         int size = a.length;
@@ -42,6 +42,6 @@ public class P1 {
 
     public static void main(String[] args) {
         int[] a = { 12, 16, 22, 30, 35, 39, 42, 45, 48, 50, 53, 55, 56};
-        log.debug("{}", new P1().solve(a, 3, 47));
+        log.debug("{}", new ClosestKElements().solve(a, 3, 47));
     }
 }

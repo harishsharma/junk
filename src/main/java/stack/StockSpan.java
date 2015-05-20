@@ -17,7 +17,7 @@ import array.Pair;
  *
  */
 @Slf4j
-public class P1 {
+public class StockSpan {
     public int[] solve(int[] a) {
         Stack<Pair<Integer, Integer>> data = new Stack<>();
         int aLen = a.length;
@@ -43,6 +43,6 @@ public class P1 {
 
     public static void main(String[] args) {
         int[] a = { 100, 80, 60, 70, 60, 75, 85};
-        log.debug("{}", new P1().solve(a));
+        log.debug("{}", new StockSpan().solve(a));
     }
 }

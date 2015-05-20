@@ -13,7 +13,7 @@ import lombok.extern.slf4j.Slf4j;
  *
  */
 @Slf4j
-public class P2 {
+public class NextGreater {
     public int[] solve(int[] a) {
         int len = a.length;
         Stack<Integer> stack = new Stack<>();
@@ -39,6 +39,6 @@ public class P2 {
 
     public static void main(String[] args) {
         int[] a = { 100, 80, 60, 70, 60, 75, 85};
-        log.debug("{}", new P2().solve(a));
+        log.debug("{}", new NextGreater().solve(a));
     }
 }
