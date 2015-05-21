@@ -6,7 +6,7 @@ package trees.binary;
  * @author harish.sharma
  *
  */
-public class P2 {
+public class HeightOfTree {
     public int solve(Node root) {
         if (root == null) return 0;
         if (root.left == null && root.right == null) return 1;
@@ -21,6 +21,6 @@ public class P2 {
         root1.right.right = new Node(5);
         root1.left.right.left = new Node(4);
 
-        System.out.println(new P2().solve(root1));
+        System.out.println(new HeightOfTree().solve(root1));
     }
 }

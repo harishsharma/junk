@@ -9,7 +9,7 @@ package trees.binary;
  * @author harish.sharma
  *
  */
-public class P15 {
+public class FoldableTree {
     public boolean solve(Node root) {
         if (root == null) return true;
         return isFoldable(root.left, root.right);
@@ -32,6 +32,6 @@ public class P15 {
         root1.right.right.right = new Node(1);
         root1.left.left.left = new Node(2);
 
-        System.out.println(new P15().solve(root1));
+        System.out.println(new FoldableTree().solve(root1));
     }
 }

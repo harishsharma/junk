@@ -6,7 +6,7 @@ package trees.binary;
  * @author harish.sharma
  *
  */
-public class P1 {
+public class IdenticalTrees {
     public boolean solve(Node root1, Node root2) {
         if (root1 == root2) return true;
         if (root1 == null && root2 == null) return true;
@@ -25,6 +25,6 @@ public class P1 {
         root2.right = new Node(3);
         root2.left.right = new Node(4);
 
-        System.out.println(new P1().solve(root1, root2));
+        System.out.println(new IdenticalTrees().solve(root1, root2));
     }
 }

@@ -7,7 +7,7 @@ package trees.bst;
  * @author harish.sharma
  *
  */
-public class P6 {
+public class TrimTreeInARange {
 
     public static Node<Integer> solve(Node<Integer> root, int min, int max) {
         if (root == null) return root;

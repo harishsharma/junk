@@ -9,7 +9,7 @@ import java.util.Stack;
  * @author harish.sharma
  *
  */
-public class P2 {
+public class BinaryTreeToLinkedList {
 
     public LinkedList<Integer> solve(Node<Integer> root) {
         if (root == null) return null;
@@ -56,6 +56,6 @@ public class P2 {
         root.right = new Node<Integer>(6, null, null, 0);
         root.right.right = new Node<Integer>(7, null, null, 0);
         // System.out.println(new P2().solve(root));
-        System.out.println(new P2().solve1(root));
+        System.out.println(new BinaryTreeToLinkedList().solve1(root));
     }
 }

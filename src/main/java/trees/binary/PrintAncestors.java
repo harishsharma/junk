@@ -6,7 +6,7 @@ package trees.binary;
  * @author harish.sharma
  *
  */
-public class P18 {
+public class PrintAncestors {
 
     public void solve(Node root, int k) {
         printAncestors(root, k);
@@ -34,6 +34,6 @@ public class P18 {
         root1.right.right.right = new Node(1);
         root1.left.left.left = new Node(2);
 
-        new P18().solve(root1, 21);
+        new PrintAncestors().solve(root1, 21);
     }
 }

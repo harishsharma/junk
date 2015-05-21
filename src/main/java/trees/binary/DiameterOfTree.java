@@ -8,7 +8,7 @@ package trees.binary;
  * @author harish.sharma
  *
  */
-public class P11 {
+public class DiameterOfTree {
 
     int curMax = Integer.MIN_VALUE;
 
@@ -44,6 +44,6 @@ public class P11 {
         root1.right.right.right.right = new Node(-1);
         root1.right.right.right.right.right = new Node(-1);
 
-        System.out.println(new P11().solve(root1));
+        System.out.println(new DiameterOfTree().solve(root1));
     }
 }

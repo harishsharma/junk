@@ -6,7 +6,7 @@ package trees.binary;
  * @author harish.sharma
  *
  */
-public class P17 {
+public class PrintLevelOfNode {
 
     public int solve(Node root, int key) {
         return returnLevel(root, key, 1);
@@ -39,11 +39,11 @@ public class P17 {
         root1.right.right.right = new Node(1);
         root1.left.left.left = new Node(2);
 
-        System.out.println(new P17().solve(root1, 10));
-        System.out.println(new P17().solve(root1, 8));
-        System.out.println(new P17().solve(root1, 3));
-        System.out.println(new P17().solve(root1, 5));
-        System.out.println(new P17().solve(root1, 2));
-        System.out.println(new P17().solve(root1, 211));
+        System.out.println(new PrintLevelOfNode().solve(root1, 10));
+        System.out.println(new PrintLevelOfNode().solve(root1, 8));
+        System.out.println(new PrintLevelOfNode().solve(root1, 3));
+        System.out.println(new PrintLevelOfNode().solve(root1, 5));
+        System.out.println(new PrintLevelOfNode().solve(root1, 2));
+        System.out.println(new PrintLevelOfNode().solve(root1, 211));
     }
 }

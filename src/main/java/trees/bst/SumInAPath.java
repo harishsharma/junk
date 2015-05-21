@@ -7,7 +7,7 @@ package trees.bst;
  * @author harish.sharma
  *
  */
-public class P3 {
+public class SumInAPath {
 
     public boolean solve(Node<Integer> root, int k) {
         if (root == null) return false;
@@ -23,6 +23,6 @@ public class P3 {
         root.right = new Node<Integer>(6, null, null, 0);
         root.right.right = new Node<Integer>(7, null, null, 0);
         root.right.left = new Node<Integer>(5, null, null, 0);
-        System.out.println(new P3().solve(root, 12));
+        System.out.println(new SumInAPath().solve(root, 12));
     }
 }

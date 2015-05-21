@@ -8,7 +8,7 @@ package trees.binary;
  * @author harish.sharma
  *
  */
-public class P19 {
+public class IsSumTree {
     public boolean solve(Node root) {
         if (root == null || root.left == null && root.right == null) return true;
         boolean left = solve(root.left);
@@ -51,6 +51,6 @@ public class P19 {
         root.right.left = new Node(2);
         root.right.right = new Node(3);
 
-        System.out.println(new P19().solve(root));
+        System.out.println(new IsSumTree().solve(root));
     }
 }

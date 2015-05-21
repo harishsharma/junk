@@ -7,7 +7,7 @@ package trees.binary;
  * @author harish.sharma
  *
  */
-public class P13 {
+public class PathSumEqualK {
 
     public boolean solve(Node root, int k) {
         if (root == null) return false;
@@ -23,6 +23,6 @@ public class P13 {
         root1.right = new Node(2);
         root1.right.left = new Node(3);
         root1.right.right = new Node(1);
-        System.out.println(new P13().solve(root1, 23));
+        System.out.println(new PathSumEqualK().solve(root1, 23));
     }
 }

@@ -6,7 +6,7 @@ package trees.bst;
  * @author harish.sharma
  *
  */
-public class P4 {
+public class ArrayToHeightBalancedTree {
 
     Node<Integer> solve(int[] a) {
         if (a.length == 0) return null;
@@ -29,6 +29,6 @@ public class P4 {
 
     public static void main(String[] args) {
         int[] a = { 1, 2, 3, 4, 5};
-        System.out.println(new P4().solve(a));
+        System.out.println(new ArrayToHeightBalancedTree().solve(a));
     }
 }

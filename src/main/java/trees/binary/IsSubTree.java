@@ -8,7 +8,7 @@ package trees.binary;
  * @author harish.sharma
  *
  */
-public class P20 {
+public class IsSubTree {
 
     public boolean solve(Node troot, Node sroot) {
         if (sroot == null && troot == null) return true;
@@ -50,8 +50,8 @@ public class P20 {
         root3.left = new Node(2);
         root3.right = new Node(2);
 
-        System.out.println(new P20().solve(root, root1));
-        System.out.println(new P20().solve(root, root2));
-        System.out.println(new P20().solve(root, root3));
+        System.out.println(new IsSubTree().solve(root, root1));
+        System.out.println(new IsSubTree().solve(root, root2));
+        System.out.println(new IsSubTree().solve(root, root3));
     }
 }

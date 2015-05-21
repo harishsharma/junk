@@ -7,7 +7,7 @@ package trees.binary;
  * @author harish.sharma
  *
  */
-public class P16 {
+public class KdistanceFromRoot {
 
     public void solve(Node root, int k) {
         printAtK(root, k - 1);
@@ -31,10 +31,10 @@ public class P16 {
         root1.right.right.right = new Node(1);
         root1.left.left.left = new Node(2);
 
-        new P16().solve(root1, 0);
-        new P16().solve(root1, 1);
-        new P16().solve(root1, 2);
-        new P16().solve(root1, 3);
-        new P16().solve(root1, 4);
+        new KdistanceFromRoot().solve(root1, 0);
+        new KdistanceFromRoot().solve(root1, 1);
+        new KdistanceFromRoot().solve(root1, 2);
+        new KdistanceFromRoot().solve(root1, 3);
+        new KdistanceFromRoot().solve(root1, 4);
     }
 }

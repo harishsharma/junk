@@ -6,7 +6,7 @@ package trees.binary;
  * @author harish.sharma
  *
  */
-public class P14 {
+public class PrintPathsToLeaf {
 
     int[] a = new int[20];
 
@@ -38,6 +38,6 @@ public class P14 {
         root1.right.right = new Node(1);
         root1.right.right.right = new Node(1);
 
-        new P14().solve(root1);
+        new PrintPathsToLeaf().solve(root1);
     }
 }

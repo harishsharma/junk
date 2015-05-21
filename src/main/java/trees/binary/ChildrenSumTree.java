@@ -6,7 +6,7 @@ package trees.binary;
  * @author harish.sharma
  *
  */
-public class P10 {
+public class ChildrenSumTree {
 
     public Node solve(Node root) {
         if (root == null || root.left == null && root.right == null) return root;
@@ -29,6 +29,6 @@ public class P10 {
         root1.right.left = new Node(3);
         // root1.right.right = new Node(1);
 
-        System.out.println(new P10().solve(root1));
+        System.out.println(new ChildrenSumTree().solve(root1));
     }
 }

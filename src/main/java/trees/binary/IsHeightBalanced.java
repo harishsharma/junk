@@ -8,7 +8,7 @@ package trees.binary;
  * @author harish.sharma
  *
  */
-public class P12 {
+public class IsHeightBalanced {
 
     public boolean solve(Node root) {
         if (root == null) return true;
@@ -55,6 +55,6 @@ public class P12 {
         root1.right.right.right = new Node(-1);
         // root1.right.right.right.right = new Node(-1);
 
-        System.out.println(new P12().solve1(root1));
+        System.out.println(new IsHeightBalanced().solve1(root1));
     }
 }
