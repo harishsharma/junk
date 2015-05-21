@@ -10,7 +10,7 @@ import java.util.Stack;
  * @author harish.sharma
  *
  */
-public class P8 {
+public class SpiralPrint {
 
     public void solve(Node root) {
         Stack<Node> stack = new Stack<>();
@@ -42,6 +42,6 @@ public class P8 {
         root1.right.left = new Node(6);
         root1.right.right = new Node(7);
 
-        new P8().solve(root1);
+        new SpiralPrint().solve(root1);
     }
 }

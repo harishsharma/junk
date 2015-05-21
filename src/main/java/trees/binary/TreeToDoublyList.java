@@ -7,7 +7,7 @@ package trees.binary;
  * @author harish.sharma
  *
  */
-public class P5 {
+public class TreeToDoublyList {
 
     public Node solve(Node root) {
         if (root == null) return null;
@@ -43,6 +43,6 @@ public class P5 {
         root1.left.right = new Node(3);
         root1.left.left = new Node(1);
         root1.right = new Node(5);
-        new P5().solve(root1);
+        new TreeToDoublyList().solve(root1);
     }
 }

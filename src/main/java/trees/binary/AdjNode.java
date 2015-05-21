@@ -11,7 +11,7 @@ import lombok.ToString;
  * @author harish.sharma
  *
  */
-public class P21 {
+public class AdjNode {
 
     public SNode solve(SNode root) {
 
@@ -60,6 +60,6 @@ public class P21 {
         root.right = new SNode(3);
         root.left.left = new SNode(4);
         root.left.right = new SNode(5);
-        System.out.println(new P21().solve(root));
+        System.out.println(new AdjNode().solve(root));
     }
 }

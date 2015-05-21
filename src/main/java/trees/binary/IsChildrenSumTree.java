@@ -6,7 +6,7 @@ package trees.binary;
  * @author harish.sharma
  *
  */
-public class P9 {
+public class IsChildrenSumTree {
 
     public boolean solve(Node root) {
         if (root == null) return true;
@@ -27,6 +27,6 @@ public class P9 {
         root1.right.left = new Node(3);
         root1.right.right = new Node(-1);
 
-        System.out.println(new P9().solve(root1));
+        System.out.println(new IsChildrenSumTree().solve(root1));
     }
 }

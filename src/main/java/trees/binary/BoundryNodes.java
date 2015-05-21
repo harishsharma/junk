@@ -11,7 +11,7 @@ import com.google.common.collect.Lists;
  * @author harish.sharma
  *
  */
-public class P24 {
+public class BoundryNodes {
 
 
     public void solve(Node root) {
@@ -59,6 +59,6 @@ public class P24 {
         root.right.left = new Node(22);
         // root.right.right = new Node(3);
 
-        new P24().solve(root);
+        new BoundryNodes().solve(root);
     }
 }

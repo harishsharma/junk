@@ -6,7 +6,7 @@ package trees.binary;
  * @author harish.sharma
  *
  */
-public class P7 {
+public class CountLeaves {
 
     int count = 0;
 
@@ -31,6 +31,6 @@ public class P7 {
         root1.left.left = new Node(1);
         root1.right = new Node(5);
 
-        System.out.println(new P7().solve(root1));
+        System.out.println(new CountLeaves().solve(root1));
     }
 }

@@ -6,7 +6,7 @@ package trees.binary;
  * @author harish.sharma
  *
  */
-public class P28 {
+public class IsLeavesAtSameLevel {
 
     int     height;
     boolean isFirst = true;
@@ -39,6 +39,6 @@ public class P28 {
         root.right.right = new Node(3);
         root.right.right.right = new Node(3);
 
-        System.out.println(new P28().solve(root));
+        System.out.println(new IsLeavesAtSameLevel().solve(root));
     }
 }

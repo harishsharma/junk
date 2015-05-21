@@ -9,7 +9,7 @@ import java.util.Queue;
  * @author harish.sharma
  *
  */
-public class P6 {
+public class LevelOrderTraversal {
     public void solve(Node root) {
         if (root == null) {
             return;
@@ -31,6 +31,6 @@ public class P6 {
         root1.left.left = new Node(1);
         root1.right = new Node(5);
 
-        new P6().solve(root1);
+        new LevelOrderTraversal().solve(root1);
     }
 }

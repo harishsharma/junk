@@ -7,7 +7,7 @@ package trees.binary;
  * @author harish.sharma
  *
  */
-public class P25 {
+public class LargestIndependentSet {
 
     public int solve(Node root) {
         if (root == null) return 0;
@@ -32,6 +32,6 @@ public class P25 {
         root.right.left = new Node(22);
         // root.right.right = new Node(3);
 
-        System.out.println(new P25().solve(root));
+        System.out.println(new LargestIndependentSet().solve(root));
     }
 }

@@ -9,7 +9,7 @@ import java.util.Queue;
  * @author harish.sharma
  *
  */
-public class P26 {
+public class ReverseLevelOrder {
 
     public void solve(Node root) {
         if (root == null) return;
@@ -38,6 +38,6 @@ public class P26 {
         root.right.left = new Node(22);
         // root.right.right = new Node(3);
 
-        new P26().solve(root);
+        new ReverseLevelOrder().solve(root);
     }
 }

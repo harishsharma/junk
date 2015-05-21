@@ -6,7 +6,7 @@ package trees.binary;
  * @author harish.sharma
  *
  */
-public class P23 {
+public class MaxSumLeafPath {
 
     int[] a      = new int[10];
     int[] f      = new int[10];
@@ -50,6 +50,6 @@ public class P23 {
         root.right = new Node(5);
         root.right.left = new Node(22);
         root.right.right = new Node(3);
-        new P23().solve(root);
+        new MaxSumLeafPath().solve(root);
     }
 }

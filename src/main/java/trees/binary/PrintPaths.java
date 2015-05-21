@@ -6,7 +6,7 @@ package trees.binary;
  * @author harish.sharma
  *
  */
-public class P4 {
+public class PrintPaths {
 
     public void solve(Node root) {
         int[] a = new int[20];
@@ -36,6 +36,6 @@ public class P4 {
         root1.right.right = new Node(5);
         root1.left.right.left = new Node(4);
 
-        new P4().solve(root1);
+        new PrintPaths().solve(root1);
     }
 }

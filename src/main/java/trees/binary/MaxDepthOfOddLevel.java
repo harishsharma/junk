@@ -6,7 +6,7 @@ package trees.binary;
  * @author harish.sharma
  *
  */
-public class P27 {
+public class MaxDepthOfOddLevel {
     int curMax = Integer.MIN_VALUE;
 
     public int solve(Node root) {
@@ -43,6 +43,6 @@ public class P27 {
         root.right.right = new Node(3);
         root.right.right.right = new Node(3);
 
-        System.out.println(new P27().solve(root));
+        System.out.println(new MaxDepthOfOddLevel().solve(root));
     }
 }

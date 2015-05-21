@@ -6,7 +6,7 @@ package trees.binary;
  * @author harish.sharma
  *
  */
-public class P3 {
+public class MirrorTree {
     public Node solve(Node root) {
         if (root == null) return null;
         if (root.left == null && root.right == null) return root;
@@ -27,6 +27,6 @@ public class P3 {
         root1.right.right = new Node(5);
         root1.left.right.left = new Node(4);
 
-        System.out.println(new P3().solve(root1));
+        System.out.println(new MirrorTree().solve(root1));
     }
 }
