@@ -5,7 +5,6 @@ public class SearchInSortedMatrix {
         int[][] matrix = { { 5, 7, 8, 9}, { 6, 9, 11, 13}, { 7, 11, 12, 14}, { 8, 13, 16, 17}};
         boolean result = contains(matrix, 14);
         System.out.println(result);
-
     }
 
     private static boolean contains(int[][] matrix, int k) {
