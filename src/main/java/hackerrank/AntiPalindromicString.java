@@ -10,30 +10,43 @@ import java.util.Scanner;
  */
 public class AntiPalindromicString {
 
-
-    public static long solve(int n, int m) {
+    public static long solve(long n, long m) {
         long MOD = 1000000007;
-        if (n == 1) return m;
-        if (m == 0) return 0;
-        long res = (m * (m - 1)) % MOD;
-        return res * pow(m - 2, n - 2, MOD);
+        long res = m;
+        if (n > 1) {
+            res *= (m - 1);
+            res %= MOD;
+        }
+        if (n > 2) {
+            res *= poww(m - 2, n - 2, MOD);
+            res %= MOD;
+        }
+        return res % MOD;
     }
 
-    private static long pow(int a, int b, long MOD) {
-        if (a == 1) return 1;
-        if (b == 0) return 1;
-        if (b % 2 == 0)
-            return (pow(a, b / 2, MOD) * pow(a, b / 2, MOD)) % MOD;
-        else
-            return (a * pow(a, b / 2, MOD) * pow(a, b / 2, MOD)) % MOD;
+    private static long poww(long a, long b, long MOD) {
+        long res = 1l;
+        b = b % MOD;
+        while (b > 0) {
+            if (b % 2 == 0) {
+                b /= 2;
+                a *= a;
+                a = a % MOD;
+            } else {
+                res *= a;
+                res %= MOD;
+                b = b - 1;
+            }
+        }
+        return res;
     }
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int t = in.nextInt();
         for (int i = 0; i < t; i++) {
-            int n = in.nextInt();
-            int m = in.nextInt();
+            long n = in.nextLong();
+            long m = in.nextLong();
             System.out.println(solve(n, m));
         }
         in.close();
