@@ -32,7 +32,7 @@ public class MaxDiff {
 
     public static void main(String[] args) {
         int[] a = { 2, 3, 10, 6, 4, 8, 1};
-        int[] aa = { 7, 9, 5, 6, 3, 2};
+        int[] aa = { 2, 8, 5, 4, 9, 5, 6, 3, 2};
         System.out.println(new MaxDiff().solve(a));
         System.out.println(new MaxDiff().solve(aa));
     }

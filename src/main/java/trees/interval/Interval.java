@@ -15,5 +15,4 @@ import lombok.ToString;
 public class Interval {
     int start;
     int end;
-
 }

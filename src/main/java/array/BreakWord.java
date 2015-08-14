@@ -42,7 +42,7 @@ public class BreakWord {
         dict1.add("programcree");
         dict1.add("program");
         dict1.add("creek");
-        System.out.println(new BreakWord().solve("programcreek", dict1));
+        System.out.println(new BreakWord().solve("progracreek", dict1));
 
     }
 }

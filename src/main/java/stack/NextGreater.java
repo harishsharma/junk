@@ -2,8 +2,6 @@ package stack;
 
 import java.util.Stack;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * Given an array, print the Next Greater Element (NGE) for every element. The Next greater Element for an element x is
  * the first greater element on the right side of x in array. Elements for which no greater element exist, consider next
@@ -12,7 +10,6 @@ import lombok.extern.slf4j.Slf4j;
  * @author harish.sharma
  *
  */
-@Slf4j
 public class NextGreater {
     public int[] solve(int[] a) {
         int len = a.length;
@@ -39,6 +36,8 @@ public class NextGreater {
 
     public static void main(String[] args) {
         int[] a = { 100, 80, 60, 70, 60, 75, 85};
-        log.debug("{}", new NextGreater().solve(a));
+        // log.debug("{}", new NextGreater().solve(a));
+        for (int i : new NextGreater().solve(a))
+            System.out.print(i + " ");
     }
 }

@@ -126,6 +126,20 @@
 			<artifactId>commons-io</artifactId>
 			<version>2.4</version>
 		</dependency>
+
+		<!-- Ini4j -->
+		<dependency>
+			<groupId>org.ini4j</groupId>
+			<artifactId>ini4j</artifactId>
+			<version>0.5.4</version>
+		</dependency>
+
+		<!-- Lucene -->
+		<dependency>
+			<groupId>org.apache.lucene</groupId>
+			<artifactId>lucene-core</artifactId>
+			<version>5.2.1</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
