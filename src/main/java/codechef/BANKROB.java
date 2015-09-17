@@ -15,18 +15,19 @@ class BANKROB {
         for (int i = 0; i < n; i++) {
             int m = in.nextInt();
             float rate = in.nextFloat();
-            float[] marr = new float[m];
-            if (m == 1) {
+            if (m == 1 || rate == 0) {
                 System.out.printf("1000000000.0 0.0");
+            } else if (rate == 1) {
+                if (m % 2 == 0)
+                    System.out.printf("0.0 1000000000.0");
+                else
+                    System.out.printf("1000000000.0 0.0");
             } else {
-                for (int j = 0; j < m; j++) {
-                    marr[j] = (float) (1000000000 * Math.pow(rate, j));
-                }
-                double diff = 0;
-                for (int k = m - 1; k > 0; k--) {
-                    diff = marr[k] - diff;
-                }
-                System.out.printf("%1.1f %1.1f", 1000000000.0 - diff, diff);
+                double finalMoney = 1000000000.0 * Math.pow(m, rate);
+                if (m % 2 == 0)
+                    System.out.printf("%1.f %1.f", 10000000000.0 - finalMoney, finalMoney);
+                else
+                    System.out.printf("%1.f %1.f", finalMoney, 10000000000.0 - finalMoney);
             }
         }
         in.close();
