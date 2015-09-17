@@ -37,8 +37,11 @@ public class UFQWeighted {
     }
 
     private int root(int a) {
-        while (a != ele[a])
+        while (a != ele[a]) {
+            // falttening one level
+            ele[a] = ele[ele[a]];
             a = ele[a];
+        }
         return a;
     }
 
