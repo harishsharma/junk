@@ -21,7 +21,6 @@ public class Primes {
         for (int i = 2; i <= n; i++) {
             if (res[i] == false) result.add(i);
         }
-
         return result;
     }
 
