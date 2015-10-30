@@ -32,7 +32,7 @@ public class Server {
                         public void initChannel(SocketChannel ch) throws Exception {
                             ChannelPipeline p = ch.pipeline();
 
-                            p.addLast(new InboundHandler1());
+                            p.addLast(new InboundHandler1(), new OutboundHandler1());
                         }
                     });
 

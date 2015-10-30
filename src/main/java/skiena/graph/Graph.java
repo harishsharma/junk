@@ -7,11 +7,11 @@ package skiena.graph;
  */
 public class Graph {
 
-    private Node[]  edges;
-    private int[]   degree;
-    private int     nvertices;
-    private int     nedges;
-    private boolean isDirected;
+    private final Node[]  edges;
+    private final int[]   degree;
+    private final int     nvertices;
+    private int           nedges;
+    private final boolean isDirected;
 
     public Graph(int vertices, boolean isDirected) {
         this.isDirected = isDirected;
@@ -19,6 +19,18 @@ public class Graph {
         this.nedges = 0;
         edges = new Node[vertices + 1];
         degree = new int[vertices + 1];
+    }
+
+    public boolean isDirected() {
+        return isDirected;
+    }
+
+    public Node adjOfVertex(int x) {
+        return edges[x];
+    }
+
+    public int getNumberOfVertices() {
+        return nvertices;
     }
 
     public void addEdge(int x, int y) {

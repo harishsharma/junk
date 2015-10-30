@@ -25,6 +25,12 @@ public class OutboundHandler1 extends ChannelOutboundHandlerAdapter {
     }
 
     @Override
+    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
+        log.debug("exception called for class [{}]", getClass().getName());
+        super.exceptionCaught(ctx, cause);
+    }
+
+    @Override
     public void flush(ChannelHandlerContext ctx) throws Exception {
         log.debug("flush called for class [{}]", getClass().getName());
         super.flush(ctx);
