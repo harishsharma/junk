@@ -24,7 +24,7 @@ public class JavaClient {
     public static void main(String... args) throws UnknownHostException, IOException {
         JavaClient client = new JavaClient();
         int ITR = 10;
-        char[] charArray = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o'};
+        char[] charArray = { 'a'};
         for (int i = 0; i < charArray.length; i++) {
             Task t = new Task(client, ITR, charArray[i]);
             new Thread(t).start();

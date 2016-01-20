@@ -13,7 +13,7 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 @Sharable
-public class InboundHandler1 extends ChannelInboundHandlerAdapter {
+public class InboundHandler3 extends ChannelInboundHandlerAdapter {
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
@@ -32,9 +32,12 @@ public class InboundHandler1 extends ChannelInboundHandlerAdapter {
         // } finally {
         // ReferenceCountUtil.release(buf);
         // }
-        log.info("11Channel Read  called for [{}]", ctx.channel());
-        ctx.fireChannelRead(msg);
-        log.info("22Channel Read  called for [{}]", ctx.channel());
+        log.info("Channel Read  called for [{}]", ctx.channel());
+    }
+
+    @Override
+    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
+        log.info("Handling this ex");
     }
 
     @Override

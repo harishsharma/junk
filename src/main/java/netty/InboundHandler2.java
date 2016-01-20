@@ -10,14 +10,14 @@ public class InboundHandler2 extends ChannelInboundHandlerAdapter {
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-        log.debug("channelRead called for class [{}]", getClass().getName());
-        super.channelRead(ctx, msg);
+        log.info("33channelRead called for class [{}]", getClass().getName());
+        throw new RuntimeException();
+        // super.channelRead(ctx, msg);
     }
 
     @Override
     public void channelReadComplete(ChannelHandlerContext ctx) throws Exception {
-        log.debug("channelReadComplete called for class [{}]", getClass().getName());
-        super.channelReadComplete(ctx);
+        log.info("channelReadComplete called for class [{}]", getClass().getName());
     }
 
 }
