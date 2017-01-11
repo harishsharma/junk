@@ -3,15 +3,13 @@ package sorting;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * 
  * @author harish.sharma
- *
  */
 @Slf4j
 public class MergeSort {
-    int[] back;
+    static int[] back;
 
-    public int[] sort(int[] a) {
+    public static int[] sort(int[] a) {
         int end = a.length;
         int start = 0;
         back = new int[a.length];
@@ -19,7 +17,7 @@ public class MergeSort {
         return a;
     }
 
-    private void mergeSort(int[] a, int start, int end) {
+    private static void mergeSort(int[] a, int start, int end) {
         if (start < end) {
             int mid = start + (end - start) / 2;
             mergeSort(a, start, mid);
@@ -28,7 +26,7 @@ public class MergeSort {
         }
     }
 
-    private void merge(int[] a, int start, int mid, int end) {
+    private static void merge(int[] a, int start, int mid, int end) {
 
         for (int i = start; i <= end; i++) {
             back[i] = a[i];
@@ -54,7 +52,10 @@ public class MergeSort {
     }
 
     public static void main(String[] args) {
-        int[] a = { 1, 5, 3, 7, 9, 4, 8523, 12, 124, 24};
-        log.debug("{}", new MergeSort().sort(a));
+        int[] a = {1, 5, 3, 7, 9, 4, 8523, 12, 124, 24};
+        sort(a);
+        for (int i : a) {
+            System.out.print(i + " ");
+        }
     }
 }
