@@ -1,9 +1,5 @@
 package trees.bst;
 
-import com.sun.org.apache.bcel.internal.generic.NEW;
-
-import static com.sun.javafx.scene.traversal.Hueristic2D.findMin;
-
 /**
  * Created by harish.sharma on 2/10/16.
  */

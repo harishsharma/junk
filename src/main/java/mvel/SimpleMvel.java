@@ -1,16 +1,15 @@
 package mvel;
 
+import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
+import com.google.common.io.Resources;
+import org.mvel2.templates.TemplateRuntime;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
-
-import com.google.common.collect.Lists;
-import com.google.common.io.Resources;
-
-import org.mvel2.templates.TemplateRuntime;
-import org.weakref.jmx.com.google.common.collect.Maps;
 
 /**
  * 

@@ -1,12 +1,11 @@
 package rxjava;
 
+import java.util.ArrayList;
 import java.util.List;
-
-import org.weakref.jmx.com.google.common.collect.Lists;
 
 public class SubjectX<T> {
 
-    private List<ObserverX<T>> observers = Lists.newArrayList();
+    private List<ObserverX<T>> observers = new ArrayList<>();
     private T                  data;
 
     public void setData(T data) {

@@ -1,8 +1,8 @@
 package sun.unsafe;
 
-import java.lang.reflect.Field;
-
 import sun.misc.Unsafe;
+
+import java.lang.reflect.Field;
 
 /**
  * 
@@ -11,17 +11,6 @@ import sun.misc.Unsafe;
  */
 @SuppressWarnings("restriction")
 public class MyUnsafe {
-
-    /*
-     * Throws Security Exception.
-     */
-
-    public static sun.misc.Unsafe getUnsafe() {
-        @SuppressWarnings("deprecation")
-        Class<?> cc = sun.reflect.Reflection.getCallerClass(2);
-        if (cc.getClassLoader() != null) throw new SecurityException("Unsafe");
-        return sun.misc.Unsafe.getUnsafe();
-    }
 
     public static sun.misc.Unsafe getUnsafeRef() throws NoSuchFieldException, SecurityException,
             IllegalArgumentException, IllegalAccessException {

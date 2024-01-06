@@ -1,8 +1,7 @@
 package concurrency;
 
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
-
-import org.jboss.netty.util.internal.ConcurrentHashMap;
 
 /**
  * 
