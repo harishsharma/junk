@@ -11,7 +11,7 @@ public class TreiberStack {
 
     public void push(Integer item) {
         Node newNode = new Node(item);
-        Node oldTop = null;
+        Node oldTop;
         do {
             oldTop = top.get();
             newNode.next = oldTop;

@@ -4,45 +4,37 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
 /**
- * 
  * @author harish.sharma
- *
  */
 public class MyLock {
 
-    private final ConcurrentMap<Long, Boolean> threadToOwner = new ConcurrentHashMap<>();
-    private volatile boolean                   locked        = false;
-    private final Object                       sync          = new Object();
+    private boolean locked = false;
+    private Thread owner = null;
 
-    public MyLock() {}
-
-    public void lock() {
-        long owner = Thread.currentThread().getId();
-        synchronized (sync) {
-            Boolean isOwner = threadToOwner.get(owner);
-            if (isOwner != null && true == isOwner) return;
-            while (locked) {
-                try {
-                    sync.wait();
-                } catch (InterruptedException e) {
-                    // NOT sure how to handle.
-                    Thread.currentThread().interrupt();
-                }
-            }
-            System.out.println("Got lock in thread " + Thread.currentThread().getName());
-            threadToOwner.put(owner, true);
-            locked = true;
-        }
+    public MyLock() {
     }
 
-    public void unlock() {
-        long owner = Thread.currentThread().getId();
-        synchronized (sync) {
-            if (!threadToOwner.get(owner)) throw new IllegalMonitorStateException();
-            locked = false;
-            sync.notifyAll();
-            System.out.println("releasing lock in thread " + Thread.currentThread().getName());
+    public synchronized void lock() {
+        while (locked) {
+            try {
+                wait();
+            } catch (InterruptedException e) {
+                throw new RuntimeException();
+            }
         }
+        System.out.println("Getting the lock in " + Thread.currentThread().getName());
+        locked = true;
+        owner = Thread.currentThread();
+    }
+
+    public synchronized void unlock() {
+        if (owner != Thread.currentThread()) {
+            throw new IllegalMonitorStateException();
+        }
+        locked = false;
+        owner = null;
+        notifyAll();
+        System.out.println("Releasing the lock in " + Thread.currentThread().getName());
     }
 
     public static void main(String[] args) {
@@ -53,8 +45,8 @@ public class MyLock {
             lock.lock();
             try {
                 try {
-                    Thread.sleep(1 * 1000);
-                } catch (InterruptedException e) {
+                    // Thread.sleep(1 * 1000);
+                } catch (java.lang.Exception e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
                 }

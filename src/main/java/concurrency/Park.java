@@ -21,5 +21,6 @@ public class Park {
         Thread.sleep(2 * 1000);
         block.set(false);
         LockSupport.unpark(t);
+        LockSupport.unpark(p);
     }
 }

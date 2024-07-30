@@ -9,26 +9,22 @@ import java.util.concurrent.FutureTask;
 
 public class FTask {
     public static void main(String[] args) throws InterruptedException, ExecutionException {
-        FutureTask<Void> task = new FutureTask<Void>(new Callable<Void>() {
-
-            @Override
-            public Void call() throws java.lang.Exception {
-                System.out.println("This job is done.");
-                Thread.sleep(100 * 1000);
-                System.out.println("Wow finally done.");
-                return null;
-            }
+        FutureTask<Void> task = new FutureTask<Void>(() -> {
+            System.out.println("This job is done.");
+            Thread.sleep(10 * 1000);
+            System.out.println("Wow finally done.");
+            return null;
         });
 
         // new Thread(task).start();
         // new Thread(task).start();
-        ExecutorService service = Executors.newFixedThreadPool(2);
+        ExecutorService service = Executors.newFixedThreadPool(3);
         Future<?> f1 = service.submit(task);
         Future<?> f2 = service.submit(task);
         Runnable run = () -> {
             System.out.println("Running inside the runnable.");
         };
-        Thread.sleep(10 * 1000);
+        Thread.sleep(3 * 1000);
         service.execute(run);
         System.out.println("Haha");
         f2.get();
